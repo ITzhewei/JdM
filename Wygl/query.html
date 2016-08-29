@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="query">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>房号查询</title>
+    <link rel="stylesheet" href="lib/bootstrap-3.3.5-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/query.css">
+</head>
+<body ng-controller="queryController">
+
+<div class="qy_layout">
+    <div class="hint">
+        <span>请输入需要查询的手机号</span>
+    </div>
+    <div class="search">
+        <div class="row">
+            <div class="col-xs-3">
+                <span>手机号:</span>
+            </div>
+            <div class="col-xs-9">
+                <input type="tel" placeholder="请输入业主手机号" ng-model="phoneNumber"/>
+            </div>
+        </div>
+    </div>
+    <div class="send">
+        <input type="button" value="下一步"/>
+    </div>
+</div>
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+
+<script>
+    var module = angular.module('query',[]);
+    module.controller('queryController',['$scope',function ($scope) {
+        $scope.phoneNumber="";
+    }]);
+</script>
+</body>
+</html>
